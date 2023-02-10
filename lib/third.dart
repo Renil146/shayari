@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_share/flutter_share.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shayari/edit.dart';
-import 'package:shayari/forth.dart';
+
 
 class Third extends StatefulWidget {
   List Loveshayari = [];
@@ -17,6 +17,7 @@ class Third extends StatefulWidget {
 class _ThirdState extends State<Third> {
   int cur_index = 0;
   PageController? controller;
+
 
   @override
   void initState() {

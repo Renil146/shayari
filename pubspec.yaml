@@ -30,6 +30,7 @@ dependencies:
   clipboard:
   fluttertoast:
   flutter_share:
+
   flutter:
     sdk: flutter
 

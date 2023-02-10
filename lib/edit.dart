@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_share/flutter_share.dart';
 
 class edit extends StatefulWidget {
   List Loveshayari;
@@ -13,6 +14,33 @@ class edit extends StatefulWidget {
 class _editState extends State<edit> {
   int cur_index = 0;
   PageController? controller;
+
+  List color2 = [
+    Colors.green,
+    Colors.blue,
+    Colors.blueGrey,
+    Colors.purple,
+    Colors.deepPurple,
+    Colors.brown,
+    Colors.yellow,
+    Colors.cyan,
+    Colors.deepOrangeAccent,
+    Colors.indigo,
+    Colors.grey,
+    Colors.lightGreen,
+    Colors.lightGreenAccent,
+    Colors.pink,
+    Colors.teal,
+    Colors.tealAccent,
+    Colors.redAccent,
+    Colors.green,
+    Colors.blue,
+    Colors.blueGrey,
+    Colors.purple,
+    Colors.deepPurple,
+    Colors.brown,
+    Colors.yellow,
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -86,11 +114,28 @@ class _editState extends State<edit> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      InkWell(onTap: () {
-                        showBottomSheet(context: context, builder: (context) {
-                          return
-                        },);
-                      },
+                      InkWell(
+                        onTap: () {
+                          showModalBottomSheet(
+                            context: context,
+                            builder: (context) {
+                              return Container(height: 150,
+                                child: GridView.builder(
+                                  itemCount: color2.length,
+                                  gridDelegate:
+                                      SliverGridDelegateWithFixedCrossAxisCount(
+                                          crossAxisCount: 8,
+                                          mainAxisSpacing: 5,
+                                          crossAxisSpacing: 2,
+                                          childAspectRatio: 1),
+                                  itemBuilder: (context, index) {
+                                    return Container(height: 10,width: 10,color: color2[index],);
+                                  },
+                                ),
+                              );
+                            },
+                          );
+                        },
                         child: Container(
                             margin: EdgeInsets.all(10),
                             alignment: Alignment.center,
@@ -100,7 +145,29 @@ class _editState extends State<edit> {
                                 style: TextStyle(color: Colors.white)),
                             color: Colors.red),
                       ),
-                      Container(
+                      InkWell(
+                        onTap: () {
+                          showModalBottomSheet(
+                            context: context,
+                            builder: (context) {
+                              return Container(height: 150,
+                                child: GridView.builder(
+                                  itemCount: color2.length,
+                                  gridDelegate:
+                                  SliverGridDelegateWithFixedCrossAxisCount(
+                                      crossAxisCount: 8,
+                                      mainAxisSpacing: 5,
+                                      crossAxisSpacing: 2,
+                                      childAspectRatio: 1),
+                                  itemBuilder: (context, index) {
+                                    return Container(height: 10,width: 10,color: color2[index],);
+                                  },
+                                ),
+                              );
+                            },
+                          );
+                        },
+                      child: Container(
                         margin: EdgeInsets.all(10),
                         alignment: Alignment.center,
                         height: 25,
@@ -108,15 +175,22 @@ class _editState extends State<edit> {
                         child: Text("Text Color",
                             style: TextStyle(color: Colors.white)),
                         color: Colors.red,
-                      ),
-                      Container(
-                        margin: EdgeInsets.all(10),
-                        alignment: Alignment.center,
-                        height: 25,
-                        width: 90,
-                        child: Text("Share",
-                            style: TextStyle(color: Colors.white)),
-                        color: Colors.red,
+                      ),),
+                      InkWell(onTap: () async {
+                        await FlutterShare.share(
+                          title: 'Example share',
+                          text: widget.Loveshayari[widget.index],
+                        );
+                      },
+                        child: Container(
+                          margin: EdgeInsets.all(10),
+                          alignment: Alignment.center,
+                          height: 25,
+                          width: 90,
+                          child: Text("Share",
+                              style: TextStyle(color: Colors.white)),
+                          color: Colors.red,
+                        ),
                       ),
                     ],
                   ),
