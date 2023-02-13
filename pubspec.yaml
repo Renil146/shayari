@@ -30,6 +30,8 @@ dependencies:
   clipboard:
   fluttertoast:
   flutter_share:
+  share_plus:
+  hexcolor:
 
   flutter:
     sdk: flutter
@@ -77,12 +79,32 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
+  fonts:
+    - family: fam1
+      fonts:
+        - asset: Font/AnekGujarati-VariableFont_wdth,wght.ttf
+
+    - family: fam2
+      fonts:
+        - asset: Font/BalooBhai2-VariableFont_wght.ttf
+
+    - family: fam3
+      fonts:
+        - asset: Font/KumarOne-Regular.ttf
+
+    - family: fam4
+      fonts:
+        - asset: Font/KumarOneOutline-Regular.ttf
+
+    - family: fam5
+      fonts:
+        - asset: Font/Rasa-Italic-VariableFont_wght.ttf
+
+    - family: fam6
+      fonts:
+        - asset: Font/Shrikhand-Regular.ttf
+
+
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf

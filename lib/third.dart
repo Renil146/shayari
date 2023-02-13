@@ -23,7 +23,7 @@ class _ThirdState extends State<Third> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    cur_index = widget.ind;
+    // cur_index = widget.ind;
     controller = PageController(initialPage: cur_index);
   }
 
@@ -35,20 +35,20 @@ class _ThirdState extends State<Third> {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
-              height: 50,
-              width: 50,
-              child: Image.asset("image/expand.png"),
-            ),
+            // Container(
+            //   height: 50,
+            //   width: 50,
+            //   child: Image.asset("image/expand.png"),
+            // ),
             Container(
                 height: 50,
                 width: 50,
                 child: Text("${cur_index + 1}/ ${widget.Loveshayari.length}")),
-            Container(
-              height: 50,
-              width: 50,
-              child: Image.asset("image/reload.png"),
-            ),
+            // Container(
+            //   height: 50,
+            //   width: 50,
+            //   child: Image.asset("image/reload.png"),
+            // ),
           ],
         ),
         Row(
@@ -110,7 +110,7 @@ class _ThirdState extends State<Third> {
                         controller!.jumpToPage(cur_index);
                       }, icon: Icon(Icons.keyboard_arrow_left)),
                   InkWell(onTap: () {
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) {
                       return edit(widget.Loveshayari,widget.ind);
                     },));
                   },child: Image(image: AssetImage("image/pencil2.png"))),

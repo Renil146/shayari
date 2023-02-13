@@ -52,7 +52,7 @@ class _SecondState extends State<Second> {
         body: ListView.separated(
             itemBuilder: (context, index) {
               return ListTile(onTap: () {
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
                   return Third(Loveshayari,index);
                 },));
               },

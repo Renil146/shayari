@@ -10,7 +10,6 @@ void main() {
 }
 
 class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
 
   @override
   State<MyApp> createState() => _MyAppState();
@@ -51,7 +50,7 @@ class _MyAppState extends State<MyApp> {
 
               },
               child: ListTile(onTap: () {
-                Navigator.pushReplacement(context, MaterialPageRoute(
+                Navigator.push(context, MaterialPageRoute(
                   builder: (context) {
                     return Second(index);
                   },
