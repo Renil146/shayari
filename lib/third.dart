@@ -23,7 +23,7 @@ class _ThirdState extends State<Third> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    // cur_index = widget.ind;
+    cur_index = widget.ind;
     controller = PageController(initialPage: cur_index);
   }
 
